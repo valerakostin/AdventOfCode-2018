@@ -1,11 +1,10 @@
 package day01
 
-import utils.Utils.getLinesFromSources
+import utils.Utils.getItemsFromResource
 
 
 fun solve() {
-    val linesFromSources = getLinesFromSources("InputDay01.txt")
-    val numbers = linesFromSources.map { Integer.parseInt(it) }.toList()
+    val numbers = getItemsFromResource("InputDay01.txt", Integer::parseInt)
     println("Task 1 ${numbers.sum()}")
     println("Task 2 ${task2(numbers)}")
 }
@@ -23,7 +22,6 @@ fun task2(numbers: List<Int>): Int {
 }
 
 fun main(args: Array<String>) {
-
     println("Day 01:")
     solve()
 }
