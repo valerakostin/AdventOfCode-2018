@@ -16,10 +16,8 @@ fun task2(numbers: List<Int>): Int {
     while (true) {
         for (number in numbers) {
             currentFrequency += number
-            if (set.contains(currentFrequency))
+            if (!set.add(currentFrequency))
                 return currentFrequency
-            else
-                set.add(currentFrequency)
         }
     }
 }
