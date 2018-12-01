@@ -1,6 +1,6 @@
 package day01
 
-import utils.getLinesFromSources
+import utils.Utils.getLinesFromSources
 
 
 fun solve() {
