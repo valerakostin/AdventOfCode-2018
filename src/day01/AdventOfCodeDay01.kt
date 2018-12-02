@@ -3,13 +3,13 @@ package day01
 import utils.Utils.getItemsFromResource
 
 
-fun solve() {
+private fun solve() {
     val numbers = getItemsFromResource("InputDay01.txt", Integer::parseInt)
     println("Task 1 ${numbers.sum()}")
     println("Task 2 ${task2(numbers)}")
 }
 
-fun task2(numbers: List<Int>): Int {
+private fun task2(numbers: List<Int>): Int {
     val set = mutableSetOf(0)
     var currentFrequency = 0
     while (true) {
