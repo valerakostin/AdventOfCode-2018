@@ -13,6 +13,5 @@ internal object Utils {
 
     fun <T> getItemsFromResource(resource: String, transform: ((String) -> T)): List<T> {
         return getLinesFromResources(resource).map(transform).toList()
-
     }
 }
