@@ -1,6 +1,6 @@
 package day08
 
-import utils.Utils
+import utils.Utils.getLineFromResource
 
 private data class Node(val childCount: Int, val metaDataCount: Int) {
     val children = mutableListOf<Node>()
@@ -40,7 +40,7 @@ private data class Node(val childCount: Int, val metaDataCount: Int) {
 }
 
 private fun solve() {
-    val rawString = Utils.getLinesFromResources("InputDay08.txt")[0]
+    val rawString = getLineFromResource("InputDay08.txt")
     val input = rawString.split(" ").map { it.toInt() }
 
     val root = getRootNode(input)

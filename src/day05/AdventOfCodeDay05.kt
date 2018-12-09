@@ -1,6 +1,6 @@
 package day05
 
-import utils.Utils.getLinesFromResources
+import utils.Utils.getLineFromResource
 
 private fun Char.equalIgnoreCase(ch: Char): Boolean = this - 32 == ch || this + 32 == ch
 
@@ -30,7 +30,7 @@ private fun String.filterChar(ch: Char): MutableList<Char> {
 }
 
 private fun solve() {
-    val line = getLinesFromResources("InputDay05.txt")[0]
+    val line = getLineFromResource("InputDay05.txt")
     val items = line.toMutableList()
 
     val result = destroyPolymers(items)

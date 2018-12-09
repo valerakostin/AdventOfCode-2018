@@ -1,7 +1,7 @@
 package day02
 
 
-import utils.Utils.getLinesFromResources
+import utils.Utils.getLinesFromResource
 
 
 private fun task1(lines: List<String>) {
@@ -35,7 +35,7 @@ private fun task2(lines: List<String>) {
 
 
 private fun solve() {
-    val lines = getLinesFromResources("InputDay02.txt")
+    val lines = getLinesFromResource("InputDay02.txt")
     task1(lines)
     task2(lines)
 }

@@ -1,11 +1,11 @@
 package day09
 
-import utils.Utils
+import utils.Utils.getLineFromResource
 import java.util.*
 
 private fun solve() {
 
-    val line = Utils.getLinesFromResources("InputDay09.txt")[0]
+    val line = getLineFromResource("InputDay09.txt")
     val regex = "(\\d+) players; last marble is worth (\\d+) points".toRegex()
     val matchResult = regex.matchEntire(line)
     matchResult?.let {

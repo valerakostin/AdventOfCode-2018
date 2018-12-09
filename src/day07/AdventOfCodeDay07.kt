@@ -223,7 +223,7 @@ private fun createGraph(lines: List<String>): Graph {
 }
 
 private fun solve() {
-    val lines = Utils.getLinesFromResources("InputDay07.txt")
+    val lines = Utils.getLinesFromResource("InputDay07.txt")
     val graph = createGraph(lines)
     val task1 = graph.computeOperationOrder()
     println("Task 1:$task1")
