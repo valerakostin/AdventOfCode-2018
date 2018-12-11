@@ -7,6 +7,8 @@ import utils.Utils
 data class Velocity(val x: Int, val y: Int)
 data class Point(val loc: Loc, val vel: Velocity) {
     fun move() = Point(Loc(loc.x + vel.x, loc.y + vel.y), vel)
+    fun moveBack() = Point(Loc(loc.x - vel.x, loc.y - vel.y), vel)
+
 
     companion object {
         fun createPoint(rawString: String): Point {
@@ -51,16 +53,24 @@ private fun solve(points: List<Point>) {
     var newLoc = points
     var counter = 0
 
+    val (initialMin, initialMax) = newLoc.getBounds()
+    var currentWidth = initialMax.x - initialMin.x
+    var currentHeight = initialMax.y - initialMin.y
+
     while (true) {
         val (min, max) = newLoc.getBounds()
 
         val width = max.x - min.x
         val height = max.y - min.y
 
-        if (width == 61 && height == 9) {
+        if (currentWidth >= width && currentHeight >= height) {
+            currentWidth = width
+            currentHeight = height
+        } else {
+            newLoc = newLoc.map { it.moveBack() }
             println("Task 1:")
             printCurrentLayout(newLoc, min, max)
-            println("Task 2: Waiting time $counter")
+            println("Task 2: Waiting time ${counter - 1}")
             return
         }
         counter++
